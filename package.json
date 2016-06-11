@@ -1,0 +1,17 @@
+{
+  "name": "app-routing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --content-base .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Coty Embry",
+  "license": "MIT",
+  "devDependencies": {
+    "jquery": "^3.0.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
