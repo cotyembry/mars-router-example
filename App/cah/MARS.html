@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<title>MARS.csp</title>
+
+	<style type="text/css">
+		* {
+			/* this resolves issues with the iframe not
+			linking up nicely with the top navigation */
+			border: 0px;
+			margin: 0px;
+			padding: 0px;
+		}
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+		ul, li {
+			display: inline-block;
+			width: calc(100% / 8);
+		}
+		ul {
+			border: 2px solid orange;
+			width: 100%;
+			margin: 0px;
+		}
+		li {
+
+		}
+		#content, iframe {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+</head>
+<body>
+	<center><ul>
+		<li><a href="#/one">one</a></li>
+		<li><a href="#/two">two</a></li>
+		<li><a href="#/three">three</a></li>
+		<li><a href="#/four">four</a></li>
+		<li><a href="#/five">five</a></li>
+		<li><a href="#/six">six</a></li>
+		<li><a href="#/seven">seven</a></li>
+		
+	</ul>
+	</center>
+	<div id="content">
+		<iframe src="" id="page" name="page"></iframe>
+	</div>
+	<script type="text/javascript" src="../dist/bundle.js"></script>
+	<script type="text/javascript">
+		var hash_callback = [
+			'#/one', function() { console.log('hit #/one') },
+			'#/two', function() { console.log('hit #/two') },
+			'#/three', function() { console.log('hit #/three') },
+			'#/four', function() { console.log('hit #/four') },
+			'#/five', function() { console.log('hit #/five') },
+			'#/six', function() { console.log('hit #/six') },
+			'#/seven', function() { console.log('hit #/seven') }
+		];
+		$(document).ready(function() {
+			$(window).bind( 'hashchange', Router.hashChange);
+			Router.registerRoutes(hash_callback);
+		})
+	</script>
+</body>
+</html>
